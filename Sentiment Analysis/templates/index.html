@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>search</title>
+<!-- Include Bootstrap CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<style>
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+  }
+  .search-container {
+    text-align: center;
+    padding: 20px;
+    border-radius: 5px;
+    background-color: white;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  }
+</style>
+<script>
+  function redirectToSearch() {
+    performSearch();
+  }
+
+  function performSearch() {
+    const query = document.getElementById('searchInput').value;
+    if (query.trim() !== '') {
+      window.location.href = `/search/${encodeURIComponent(query)}`;
+    }
+  }
+
+  function handleKeyPress(event) {
+    if (event.key === 'Enter') {
+      performSearch();
+    }
+  }
+</script>
+</head>
+<body>
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-lg-6 col-md-8 col-sm-10">
+      <div class="search-container">
+        <h1 class="mb-4">news perception</h1>
+        <div class="input-group mb-3">
+          <input id="searchInput" type="text" class="form-control" placeholder="search for a topic" onkeypress="handleKeyPress(event)">
+          <div class="input-group-append">
+            <button class="btn btn-primary" type="button" onclick="redirectToSearch()">search</button>
+          </div>
+        </div>
+      </div>
+      <!-- New buttons for login and signup -->
+      <div class="d-flex justify-content-between mb-3">
+        <div>
+          <a class="btn btn-secondary mr-2" href="/login">login</a>
+          <a class="btn btn-secondary" href="/sign-up">sign up</a>
+        </div>
+        <div>
+          <p class="mb-0">&copy; 2023 daniel. all rights reserved.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Include Bootstrap JS and Popper.js -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Percentage Display</title>
+<!-- Include Bootstrap CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<style>
+  body {
+    background-color: #f0f0f0;
+    padding: 50px;
+  }
+  .percentage-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  }
+  .percentage-box {
+    text-align: center;
+  }
+  .percentage {
+    font-size: 3rem;
+    color: #007bff;
+  }
+  .percentage-label {
+    font-size: 1.2rem;
+    color: #555;
+    margin-top: -10px;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="percentage-container">
+    <div class="percentage-box">
+      <div class="percentage">{{ percentage1 }}%</div>
+      <div class="percentage-label">subjectivity of articles</div>
+    </div>
+    <div class="percentage-box">
+      <div class="percentage">{{ percentage2 }}%</div>
+      <div class="percentage-label">percentage of articles that are "positive"</div>
+    </div>
+  </div>
+</div>
+<!-- Include Bootstrap JS and Popper.js -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
